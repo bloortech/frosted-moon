@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&family=Hanken+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: #e7e3d6; font-family: 'Hanken Grotesk', sans-serif; }
+  img { display: block; max-width: 100%; }
+  button { font: inherit; cursor: pointer; }
+  input, textarea { font: inherit; }
+  a { color: inherit; }
+</style>
+</helmet>
+
+<div style="max-width:1200px; margin:0 auto; background:#fcf9ee;">
+
+  <!-- nav -->
+  <div style="position:sticky; top:0; z-index:20; display:flex; justify-content:space-between; align-items:center; padding:20px 48px; border-bottom:1px solid #efe7d6; background:#fcf9eef2; backdrop-filter:blur(6px);">
+    <div style="display:flex; align-items:center; gap:30px;">
+      <a href="#top" style="display:flex; align-items:center; gap:9px; text-decoration:none;">
+        <span style="font-size:17px; color:#c46a45;">☾</span>
+        <span style="font-family:Newsreader; font-size:21px; letter-spacing:.01em; color:#1c1a17;">frosted moon</span>
+      </a>
+      <div style="display:flex; gap:24px; font-size:13px; color:#4a4843;">
+        <a href="#menu" style="text-decoration:none;">Menu</a>
+        <a href="#workshop" style="text-decoration:none;">Workshops</a>
+        <a href="#story" style="text-decoration:none;">Our story</a>
+      </div>
+    </div>
+    <div style="display:flex; gap:20px; font-size:13px; color:#4a4843; align-items:center;">
+      <span style="color:#c46a45;">Kota, Rajasthan</span>
+      <a href="#order" style="border:1px solid #c46a45; color:#c46a45; padding:8px 16px; border-radius:20px; text-decoration:none;">Basket ({{ bagCount }})</a>
+    </div>
+  </div>
+
+  <div id="top"></div>
+
+  <!-- hero -->
+  <div style="display:grid; grid-template-columns:1.05fr 1fr;">
+    <div style="padding:70px 48px; display:flex; flex-direction:column; justify-content:center; background:#f7ede2; min-height:580px;">
+      <div style="display:flex; align-items:center; gap:8px; margin-bottom:22px;">
+        <span style="font-size:15px; color:#c46a45;">☾</span>
+        <span style="font-family:monospace; font-size:11px; letter-spacing:.16em; color:#b07a56;">FRESH, EGGLESS, HOMEMADE</span>
+      </div>
+      <div style="font-family:Newsreader; font-size:58px; line-height:1.03; letter-spacing:-.02em; color:#1c1a17;">Sweet little<br>things, baked<br><span style="font-style:italic; color:#c46a45;">under the moon.</span></div>
+      <div style="font-size:17px; line-height:1.65; color:#6a6965; max-width:430px; margin-top:24px;">Hi, so glad you are here. Nikita bakes cakes, cookies, and dreamy dessert jars from her own kitchen in Kota. Every treat is eggless and made just for you. Pick what makes you smile and she will start baking.</div>
+      <div style="margin-top:34px; display:flex; gap:16px; align-items:center;">
+        <a href="#menu" style="display:inline-flex; align-items:center; gap:9px; background:#c46a45; color:#fcf9ee; padding:14px 26px; font-size:13px; letter-spacing:.02em; text-decoration:none; border-radius:20px;">See the treats →</a>
+        <a href="#workshop" style="font-size:13px; color:#1c1a17; border-bottom:1px solid #c46a45; padding-bottom:2px; text-decoration:none;">Join a workshop</a>
+      </div>
+    </div>
+    <div style="background:#d8d4c8;">
+      <img src="images/jar-rasmalai.jpg" alt="Rasmalai tres leches" style="width:100%; height:100%; min-height:580px; object-fit:cover;">
+    </div>
+  </div>
+
+  <!-- eggless pastel strip -->
+  <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:1px; background:#efe7d6; border-top:1px solid #efe7d6; border-bottom:1px solid #efe7d6;">
+    <div style="padding:26px 40px; background:#fcf9ee; display:flex; gap:16px; align-items:center;">
+      <span style="width:40px; height:40px; border-radius:50%; background:#d6f0e0; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:16px;">☾</span>
+      <div><div style="font-family:Newsreader; font-size:18px; color:#1c1a17;">Always eggless</div><div style="font-size:12px; color:#6a6965; margin-top:3px;">No eggs, not ever</div></div>
+    </div>
+    <div style="padding:26px 40px; background:#fcf9ee; display:flex; gap:16px; align-items:center;">
+      <span style="width:40px; height:40px; border-radius:50%; background:#f6dcd4; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:16px;">♥</span>
+      <div><div style="font-family:Newsreader; font-size:18px; color:#1c1a17;">Baked fresh</div><div style="font-size:12px; color:#6a6965; margin-top:3px;">Made after you order</div></div>
+    </div>
+    <div style="padding:26px 40px; background:#fcf9ee; display:flex; gap:16px; align-items:center;">
+      <span style="width:40px; height:40px; border-radius:50%; background:#f3e6c4; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:15px;">✦</span>
+      <div><div style="font-family:Newsreader; font-size:18px; color:#1c1a17;">Delivered in Kota</div><div style="font-size:12px; color:#6a6965; margin-top:3px;">Right to your door</div></div>
+    </div>
+  </div>
+
+  <!-- menu -->
+  <div id="menu" style="padding:70px 48px 44px; scroll-margin-top:76px;">
+    <div style="text-align:center; margin-bottom:44px;">
+      <div style="font-size:16px; color:#c46a45;">☾</div>
+      <div style="font-family:Newsreader; font-size:40px; letter-spacing:-.02em; color:#1c1a17; margin-top:6px;">Pick your happy treat</div>
+      <div style="font-size:14px; color:#6a6965; margin-top:10px;">Every single one is eggless. Prices are in ₹.</div>
+    </div>
+
+    <!-- featured -->
+    <div style="display:grid; grid-template-columns:1fr 1fr; background:#f7ede2; margin-bottom:48px;">
+      <img src="images/jar-mango.jpg" alt="Mango cloud trifle" style="width:100%; height:100%; min-height:360px; object-fit:cover;">
+      <div style="padding:44px; display:flex; flex-direction:column; justify-content:center;">
+        <span style="align-self:flex-start; font-size:11px; color:#b07a56; background:#f3e6c4; padding:5px 12px; border-radius:20px; letter-spacing:.06em;">THIS MONTH'S MOON</span>
+        <div style="font-family:Newsreader; font-size:32px; color:#1c1a17; margin-top:16px; letter-spacing:-.01em;">Mango Cloud Trifle</div>
+        <div style="font-style:italic; font-family:Newsreader; font-size:15px; color:#c46a45; margin-top:6px;">soft, cloudy, and very mango</div>
+        <div style="font-size:14px; line-height:1.6; color:#6a6965; margin-top:12px; max-width:340px;">Layers of sweet Alphonso mango, fluffy cream, and light sponge, all tucked into a little jar. Cold, spoonable, and gone far too quickly.</div>
+        <div style="display:flex; align-items:center; gap:18px; margin-top:24px;">
+          <span style="font-family:Newsreader; font-size:22px; color:#1c1a17;">₹180</span>
+          <button onClick="{{ featuredAdd }}" style="background:#c46a45; color:#fcf9ee; border:none; padding:11px 22px; font-size:13px; border-radius:20px;">Add to basket</button>
+        </div>
+      </div>
+    </div>
+
+    <sc-for list="{{ menu }}" as="cat" hint-placeholder-count="3">
+      <div style="margin-bottom:44px;">
+        <div style="display:flex; align-items:center; gap:14px; margin-bottom:22px;">
+          <span style="font-size:12px; color:#b07a56; background:#f7ede2; padding:6px 14px; border-radius:20px; letter-spacing:.05em;">{{ cat.name }}</span>
+          <span style="font-size:13px; color:#a89a86; font-style:italic; font-family:Newsreader;">{{ cat.blurb }}</span>
+        </div>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:26px 40px;">
+          <sc-for list="{{ cat.items }}" as="item" hint-placeholder-count="4">
+            <div style="display:grid; grid-template-columns:104px 1fr; gap:20px; align-items:center; padding-bottom:24px; border-bottom:1px solid #efe7d6;">
+              <sc-if value="{{ item.hasImg }}" hint-placeholder-val="{{ true }}">
+                <img src="{{ item.img }}" alt="{{ item.name }}" style="width:104px; height:104px; object-fit:cover;">
+              </sc-if>
+              <sc-if value="{{ item.noImg }}" hint-placeholder-val="{{ true }}">
+                <div style="width:104px; height:104px; background:repeating-linear-gradient(45deg,#f7ede2,#f7ede2 8px,#fbf2e7 8px,#fbf2e7 16px); display:flex; align-items:center; justify-content:center;">
+                  <span style="font-family:monospace; font-size:9px; color:#c3a988;">soon</span>
+                </div>
+              </sc-if>
+              <div>
+                <div style="font-family:Newsreader; font-size:20px; color:#1c1a17; letter-spacing:-.01em;">{{ item.name }}</div>
+                <div style="font-size:13px; line-height:1.5; color:#6a6965; margin-top:5px;">{{ item.desc }}</div>
+                <div style="display:flex; align-items:center; justify-content:space-between; margin-top:12px;">
+                  <span style="font-size:15px; color:#1c1a17;">₹{{ item.price }}</span>
+                  <button onClick="{{ item.add }}" style="border:1px solid #c46a45; background:transparent; color:#c46a45; padding:7px 18px; font-size:12px; border-radius:20px;" style-hover="background:#c46a45; color:#fcf9ee;">Add +</button>
+                </div>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </sc-for>
+  </div>
+
+  <!-- order -->
+  <div id="order" style="padding:60px 48px; background:#f7ede2; border-top:1px solid #efe7d6; scroll-margin-top:76px;">
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:56px;">
+      <div>
+        <div style="display:flex; align-items:center; gap:9px; margin-bottom:6px;">
+          <span style="font-size:16px; color:#c46a45;">☾</span>
+          <div style="font-family:Newsreader; font-size:28px; color:#1c1a17;">Your basket</div>
+        </div>
+        <div style="font-size:13px; color:#6a6965; margin-bottom:24px;">Fill it up, add your details, and send it over to Nikita in one tap.</div>
+        <sc-if value="{{ bagEmpty }}" hint-placeholder-val="{{ true }}">
+          <div style="font-size:14px; color:#a89a86; padding:28px 0; border-top:1px solid #ecd9c4;">It is empty for now. Tap a treat above and watch it land here.</div>
+        </sc-if>
+        <sc-if value="{{ bagHasItems }}" hint-placeholder-val="{{ false }}">
+          <div>
+            <sc-for list="{{ bagItems }}" as="row" hint-placeholder-count="0">
+              <div style="display:flex; align-items:center; justify-content:space-between; padding:13px 0; border-top:1px solid #ecd9c4;">
+                <div style="flex:1;">
+                  <div style="font-family:Newsreader; font-size:16px; color:#1c1a17;">{{ row.name }}</div>
+                  <div style="font-size:12px; color:#a89a86;">₹{{ row.price }} each</div>
+                </div>
+                <div style="display:flex; align-items:center; gap:12px;">
+                  <button onClick="{{ row.dec }}" style="width:26px; height:26px; border:1px solid #d9b99e; background:#fcf9ee; color:#c46a45; border-radius:50%;">–</button>
+                  <span style="min-width:16px; text-align:center; font-size:14px;">{{ row.qty }}</span>
+                  <button onClick="{{ row.inc }}" style="width:26px; height:26px; border:1px solid #d9b99e; background:#fcf9ee; color:#c46a45; border-radius:50%;">+</button>
+                  <span style="min-width:56px; text-align:right; font-size:14px; color:#1c1a17;">₹{{ row.lineTotal }}</span>
+                  <button onClick="{{ row.remove }}" style="border:none; background:none; color:#c3a988; font-size:16px;">×</button>
+                </div>
+              </div>
+            </sc-for>
+            <div style="display:flex; justify-content:space-between; padding:18px 0 0; margin-top:6px; border-top:2px solid #c46a45;">
+              <span style="font-size:14px; color:#1c1a17;">Total</span>
+              <span style="font-family:Newsreader; font-size:18px; color:#c46a45;">₹{{ bagTotal }}</span>
+            </div>
+          </div>
+        </sc-if>
+      </div>
+
+      <div>
+        <div style="font-family:Newsreader; font-size:28px; color:#1c1a17; margin-bottom:22px;">Tell Nikita a bit more</div>
+        <div style="display:flex; flex-direction:column; gap:20px;">
+          <input value="{{ form.name }}" onChange="{{ setName }}" placeholder="What is your name?" style="border:none; border-bottom:1px solid #d9b99e; background:transparent; padding:9px 2px; font-size:15px; color:#1c1a17; outline:none;">
+          <input value="{{ form.date }}" onChange="{{ setDate }}" placeholder="When would you like it?" style="border:none; border-bottom:1px solid #d9b99e; background:transparent; padding:9px 2px; font-size:15px; color:#1c1a17; outline:none;">
+          <input value="{{ form.phone }}" onChange="{{ setPhone }}" placeholder="Your phone number" style="border:none; border-bottom:1px solid #d9b99e; background:transparent; padding:9px 2px; font-size:15px; color:#1c1a17; outline:none;">
+          <textarea value="{{ form.notes }}" onChange="{{ setNotes }}" placeholder="Want a message on the cake, or have an allergy? Tell us here." rows="2" style="border:none; border-bottom:1px solid #d9b99e; background:transparent; padding:9px 2px; font-size:15px; color:#1c1a17; outline:none; resize:none;"></textarea>
+        </div>
+        <div style="margin-top:30px;">
+          <sc-if value="{{ bagHasItems }}" hint-placeholder-val="{{ false }}">
+            <a href="{{ waHref }}" target="_blank" style="display:inline-flex; align-items:center; gap:9px; background:#c46a45; color:#fcf9ee; padding:15px 28px; font-size:13px; letter-spacing:.02em; text-decoration:none; border-radius:24px;">Send my order on WhatsApp →</a>
+          </sc-if>
+          <sc-if value="{{ bagEmpty }}" hint-placeholder-val="{{ true }}">
+            <div style="display:inline-flex; align-items:center; gap:9px; border:1px solid #e3cdb6; background:transparent; color:#c3a988; padding:15px 28px; font-size:13px; border-radius:24px;">Pop a treat in first</div>
+          </sc-if>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- workshop -->
+  <div id="workshop" style="padding:70px 48px; scroll-margin-top:76px;">
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:52px; align-items:center;">
+      <div style="width:100%; aspect-ratio:4/3; background:repeating-linear-gradient(45deg,#f7ede2,#f7ede2 9px,#fbf2e7 9px,#fbf2e7 18px); display:flex; align-items:center; justify-content:center;">
+        <span style="font-family:monospace; font-size:12px; color:#c3a988; letter-spacing:.06em;">workshop photo</span>
+      </div>
+      <div>
+        <span style="font-size:11px; color:#b07a56; background:#f3e6c4; padding:5px 12px; border-radius:20px; letter-spacing:.06em;">COME PLAY</span>
+        <div style="font-family:Newsreader; font-size:38px; letter-spacing:-.02em; color:#1c1a17; margin-top:14px;">Paint a cookie,<br>then eat it</div>
+        <div style="font-size:15px; line-height:1.65; color:#6a6965; margin-top:16px; max-width:430px;">Grab a friend and spend a sweet evening painting big cookies into tiny artworks. You get edible eggless paints, your own little easel, and a goody bag to take home. Best part? You get to eat your masterpiece.</div>
+        <div style="display:flex; gap:14px; margin-top:24px; flex-wrap:wrap;">
+          <span style="font-size:12px; color:#5b8b6f; background:#d6f0e0; padding:8px 15px; border-radius:20px;">Mini easel</span>
+          <span style="font-size:12px; color:#b5726a; background:#f6dcd4; padding:8px 15px; border-radius:20px;">Goody bag</span>
+          <span style="font-size:12px; color:#a58a4a; background:#f3e6c4; padding:8px 15px; border-radius:20px;">Eggless paints</span>
+        </div>
+        <div style="margin-top:30px;">
+          <a href="{{ workshopWa }}" target="_blank" style="display:inline-flex; align-items:center; gap:9px; background:#c46a45; color:#fcf9ee; padding:14px 26px; font-size:13px; text-decoration:none; border-radius:24px;">Save me a seat →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- story -->
+  <div id="story" style="padding:20px 48px 72px; scroll-margin-top:76px;">
+    <div style="max-width:620px; margin:0 auto; text-align:center;">
+      <div style="font-size:18px; color:#c46a45;">☾</div>
+      <div style="font-family:Newsreader; font-size:28px; line-height:1.4; color:#1c1a17; margin-top:14px;">Frosted Moon started with mom life, a few dreams, and one tiny kitchen. Nikita bakes it all herself, and she pours a little love into every box she ties up.</div>
+      <div style="font-size:14px; color:#6a6965; margin-top:18px;">With love, Nikita ☾ the mama baker</div>
+    </div>
+  </div>
+
+  <!-- footer -->
+  <div style="padding:48px; border-top:1px solid #efe7d6; background:#f7ede2;">
+    <div style="display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr; gap:32px;">
+      <div>
+        <div style="display:flex; align-items:center; gap:8px;">
+          <span style="font-size:17px; color:#c46a45;">☾</span>
+          <span style="font-family:Newsreader; font-size:20px; color:#1c1a17;">frosted moon</span>
+        </div>
+        <div style="font-size:13px; color:#6a6965; margin-top:10px; line-height:1.6;">A little eggless home bakery in Kota, made with love and baked just for you.</div>
+      </div>
+      <div>
+        <div style="font-size:13px; font-weight:500; color:#1c1a17; margin-bottom:12px;">Treats</div>
+        <div style="display:flex; flex-direction:column; gap:9px; font-size:13px; color:#6a6965;"><a href="#menu" style="text-decoration:none;">Dessert jars</a><a href="#menu" style="text-decoration:none;">Cookies</a><a href="#menu" style="text-decoration:none;">Bento cakes</a></div>
+      </div>
+      <div>
+        <div style="font-size:13px; font-weight:500; color:#1c1a17; margin-bottom:12px;">Say hi</div>
+        <div style="display:flex; flex-direction:column; gap:9px; font-size:13px; color:#6a6965;"><span>WhatsApp</span><span>@frosted__moon</span><a href="#workshop" style="text-decoration:none;">Workshops</a></div>
+      </div>
+      <div>
+        <div style="font-size:13px; font-weight:500; color:#1c1a17; margin-bottom:12px;">Moon notes</div>
+        <div style="display:flex; align-items:center; border-bottom:1px solid #d9b99e;">
+          <input placeholder="Your email" style="flex:1; border:none; background:transparent; padding:8px 2px; font-size:13px; outline:none;">
+          <span style="font-size:13px; color:#c46a45;">Join</span>
+        </div>
+      </div>
+    </div>
+    <div style="font-size:12px; color:#c3a988; margin-top:36px;">Frosted Moon · Baked with love in Kota, Rajasthan</div>
+  </div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { bag: {}, form: { name: '', date: '', phone: '', notes: '' } };
+
+  add(id) {
+    this.setState(s => ({ bag: { ...s.bag, [id]: (s.bag[id] || 0) + 1 } }));
+  }
+  dec(id) {
+    this.setState(s => {
+      const q = (s.bag[id] || 0) - 1;
+      const b = { ...s.bag };
+      if (q <= 0) delete b[id]; else b[id] = q;
+      return { bag: b };
+    });
+  }
+  removeItem(id) {
+    this.setState(s => { const b = { ...s.bag }; delete b[id]; return { bag: b }; });
+  }
+  setField(k, v) {
+    this.setState(s => ({ form: { ...s.form, [k]: v } }));
+  }
+
+  renderVals() {
+    const PHONE = '919999999999'; // placeholder — swap for Nikita's real WhatsApp number
+    const waLink = (t) => 'https://wa.me/' + PHONE + '?text=' + encodeURIComponent(t);
+
+    const RAW = [
+      { key: 'jars', name: 'Dessert Jars', blurb: 'cold, layered, and made to order', items: [
+        { id: 'mango-trifle', name: 'Mango Cloud Trifle', desc: 'Alphonso mango, soft cream, and light sponge in a jar.', price: 180, img: 'images/jar-mango.jpg' },
+        { id: 'rasmalai', name: 'Rasmalai Tres Leches', desc: 'Milk-soaked sponge, saffron cream, pistachio, and a little gold.', price: 220, img: 'images/jar-rasmalai.jpg' },
+        { id: 'mango-box', name: 'Family Mango Box', desc: 'The same happy mango trifle, sized to share. Feeds 3 or 4.', price: 550, img: 'images/jar-mango-box.jpg' },
+      ] },
+      { key: 'cookies', name: 'Cookies', blurb: 'baked fresh the morning they go out', items: [
+        { id: 'trailmix', name: 'Loaded Trail-Mix Cookie', desc: 'Almond, pista, pumpkin seed, and cranberry on a soft base.', price: 90, img: 'images/cookies-nut.jpg' },
+        { id: 'chocochip', name: 'Brown-Butter Choco Chip', desc: 'The bestseller. Gooey middle, crisp little edges.', price: 70, img: null },
+        { id: 'redvelvet', name: 'Red Velvet and Oreo', desc: 'Cocoa-red dough with white chocolate and crushed Oreo.', price: 80, img: null },
+        { id: 'coconut', name: 'Coconut Shortbread', desc: 'Buttery, melts in your mouth, with a hint of toasted coconut.', price: 70, img: null },
+      ] },
+      { key: 'cakes', name: 'Bento and Mini Cakes', blurb: 'a small cake for a good little day', items: [
+        { id: 'bento-mango', name: 'Mango Bento Cake', desc: 'Feeds 1 or 2, with your own message piped on top. Order a day ahead.', price: 450, img: 'images/bento-mango.jpg' },
+        { id: 'mini-cake', name: 'Signature Mini Cake', desc: 'A 6-inch cake in the flavour you love. Order two days ahead.', price: 650, img: null },
+      ] },
+    ];
+
+    const flat = {};
+    const menu = RAW.map(cat => ({
+      key: cat.key, name: cat.name, blurb: cat.blurb,
+      items: cat.items.map(it => {
+        flat[it.id] = it;
+        return {
+          id: it.id, name: it.name, desc: it.desc, price: it.price,
+          hasImg: !!it.img, noImg: !it.img, img: it.img || '',
+          add: () => this.add(it.id),
+          waHref: waLink('Hi Frosted Moon ☾ I would love to order the ' + it.name + ' (₹' + it.price + '). Is it available?'),
+        };
+      }),
+    }));
+
+    const bagItems = Object.keys(this.state.bag).map(id => {
+      const it = flat[id];
+      const qty = this.state.bag[id];
+      return {
+        id, name: it.name, price: it.price, qty, lineTotal: it.price * qty,
+        inc: () => this.add(id), dec: () => this.dec(id), remove: () => this.removeItem(id),
+      };
+    });
+    const bagTotal = bagItems.reduce((a, b) => a + b.lineTotal, 0);
+    const bagCount = bagItems.reduce((a, b) => a + b.qty, 0);
+    const f = this.state.form;
+
+    const orderText = () => {
+      const lines = bagItems.map(b => '• ' + b.qty + ' x ' + b.name + ' — ₹' + b.lineTotal).join('\n');
+      return 'Hi Frosted Moon ☾\n\nI would like to place an order:\n' + (lines || '(no items yet)') +
+        '\n\nTotal: ₹' + bagTotal +
+        '\n\nName: ' + f.name +
+        '\nNeeded for: ' + f.date +
+        '\nPhone: ' + f.phone +
+        '\nNotes: ' + f.notes;
+    };
+
+    return {
+      menu, bagItems, bagTotal, bagCount,
+      bagEmpty: bagItems.length === 0,
+      bagHasItems: bagItems.length > 0,
+      form: f,
+      featuredAdd: () => this.add('mango-trifle'),
+      setName: (e) => this.setField('name', e.target.value),
+      setDate: (e) => this.setField('date', e.target.value),
+      setPhone: (e) => this.setField('phone', e.target.value),
+      setNotes: (e) => this.setField('notes', e.target.value),
+      waHref: bagItems.length ? waLink(orderText()) : '#',
+      workshopWa: waLink('Hi Frosted Moon ☾ I would like to join the cookie painting workshop. Are there seats left?'),
+    };
+  }
+}
+</script>
+</body>
+</html>
