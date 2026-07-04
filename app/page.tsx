@@ -369,7 +369,14 @@ export default function Home() {
 
       {/* 6. Workshop */}
       <section id="workshop" className="workshop">
-        <Placeholder label="workshop photo" className="workshop-photo" />
+        <div className="workshop-photo">
+          <Image
+            src="/images/workshop.jpg"
+            alt="Cookie paintings on mini easels at a Frosted Moon workshop"
+            fill
+            sizes="(max-width: 900px) 100vw, 50vw"
+          />
+        </div>
         <div className="workshop-body">
           <span className="featured-tag">COME PLAY</span>
           <h2>

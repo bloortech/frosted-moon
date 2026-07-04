@@ -64,6 +64,7 @@ export const CATEGORIES: MenuCategory[] = [
         name: "Red Velvet and Oreo",
         description: "Cocoa-red dough with white chocolate and crushed Oreo.",
         price: 80,
+        image: "/images/cookies-redvelvet.jpg",
       },
       {
         id: "coconut",
