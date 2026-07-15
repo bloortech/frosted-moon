@@ -946,3 +946,485 @@ img {
     gap: 28px;
   }
 }
+
+/* ============================================================
+   SITE EDITOR (/admin) — chrome only appears in edit mode.
+   None of these classes touch the public page.
+   ============================================================ */
+
+@keyframes fm-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ---------- Login ---------- */
+
+.login-screen {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: var(--backdrop);
+}
+
+.login-card {
+  width: 100%;
+  max-width: 360px;
+  background: var(--bone);
+  border: 1px solid var(--hairline);
+  border-radius: 18px;
+  padding: 36px 30px;
+  text-align: center;
+  box-shadow: 0 12px 40px rgba(28, 26, 23, 0.08);
+}
+
+.login-moon {
+  font-size: 30px;
+  color: var(--clay);
+}
+
+.login-title {
+  font-family: var(--serif);
+  font-size: 24px;
+  margin-top: 10px;
+}
+
+.login-sub {
+  color: var(--muted);
+  font-size: 14px;
+  margin: 6px 0 20px;
+}
+
+.login-input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--hairline);
+  border-radius: 10px;
+  background: #fff;
+  font: inherit;
+  font-size: 15px;
+}
+
+.login-input:focus {
+  outline: 2px solid var(--clay);
+  outline-offset: 1px;
+}
+
+.login-error {
+  color: #b91c1c;
+  font-size: 13px;
+  margin-top: 10px;
+}
+
+.login-btn {
+  width: 100%;
+  margin-top: 16px;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  background: var(--clay);
+  color: #fff;
+  font: inherit;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.login-btn:hover:not(:disabled) {
+  background: var(--clay-dark);
+}
+
+.login-btn:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+/* ---------- Toolbar ---------- */
+
+.fm-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  height: 56px;
+  padding: 0 16px;
+  background: var(--ink);
+  color: var(--bone);
+  font-family: var(--sans);
+  font-size: 13px;
+}
+
+/* The public nav is sticky too — drop that in edit mode so only the toolbar pins. */
+.fm-editor-body .nav {
+  position: static;
+  top: auto;
+}
+
+.fm-toolbar-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 0;
+}
+
+.fm-toolbar-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--bone);
+  text-decoration: none;
+  font-weight: 600;
+  white-space: nowrap;
+  opacity: 0.9;
+}
+
+.fm-toolbar-link:hover {
+  opacity: 1;
+}
+
+.fm-toolbar-icon {
+  width: 15px;
+  height: 15px;
+}
+
+.fm-toolbar-hint {
+  color: rgba(252, 249, 238, 0.55);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.fm-toolbar-mid {
+  display: flex;
+  align-items: center;
+}
+
+.fm-wa-field {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: rgba(252, 249, 238, 0.7);
+}
+
+.fm-wa-field input {
+  width: 132px;
+  padding: 5px 9px;
+  border-radius: 7px;
+  border: 1px solid rgba(252, 249, 238, 0.2);
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--bone);
+  font: inherit;
+}
+
+.fm-toolbar-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.fm-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+.fm-status-ok {
+  color: #6ee7b7;
+}
+
+.fm-status-err {
+  color: #fca5a5;
+  max-width: 260px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.fm-status-dirty {
+  color: #fcd34d;
+}
+
+.fm-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: #fcd34d;
+}
+
+.fm-save-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 18px;
+  border: none;
+  border-radius: 8px;
+  background: var(--clay);
+  color: #fff;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.fm-save-btn:hover:not(:disabled) {
+  background: var(--clay-dark);
+}
+
+.fm-save-btn:disabled {
+  background: rgba(252, 249, 238, 0.15);
+  color: rgba(252, 249, 238, 0.5);
+  cursor: default;
+}
+
+.fm-logout-btn {
+  padding: 7px 12px;
+  border: 1px solid rgba(252, 249, 238, 0.2);
+  border-radius: 8px;
+  background: transparent;
+  color: rgba(252, 249, 238, 0.75);
+  font: inherit;
+  cursor: pointer;
+}
+
+.fm-logout-btn:hover {
+  color: var(--bone);
+  border-color: rgba(252, 249, 238, 0.4);
+}
+
+@media (max-width: 760px) {
+  .fm-toolbar-hint,
+  .fm-toolbar-mid {
+    display: none;
+  }
+}
+
+/* ---------- Editable text ---------- */
+
+.fm-editable {
+  cursor: text;
+  border-radius: 3px;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  transition: background 0.15s, outline-color 0.15s;
+}
+
+.fm-editable:hover {
+  outline-color: rgba(14, 165, 233, 0.45);
+}
+
+.fm-editable:focus {
+  outline-color: #0ea5e9;
+  background: rgba(14, 165, 233, 0.06);
+}
+
+.fm-editable-empty:not(:focus)::before {
+  content: attr(data-placeholder);
+  color: var(--soft);
+  font-style: italic;
+}
+
+.fm-editable-price {
+  display: inline-block;
+  min-width: 1ch;
+}
+
+/* ---------- Replaceable photos ---------- */
+
+.fm-media-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px;
+  cursor: pointer;
+  color: #fff;
+  text-align: center;
+  background: rgba(28, 26, 23, 0.5);
+  opacity: 0;
+  transition: opacity 0.15s;
+}
+
+.fm-media-overlay:hover,
+.fm-media-overlay.is-busy {
+  opacity: 1;
+}
+
+.fm-media-icon {
+  width: 22px;
+  height: 22px;
+}
+
+.fm-media-label {
+  max-width: 100%;
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--ink);
+  background: #fff;
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
+.fm-media-error {
+  font-size: 10px;
+  color: #fecaca;
+  max-width: 92%;
+}
+
+.fm-visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+.fm-photo-fill {
+  position: absolute;
+  inset: 0;
+}
+
+/* ---------- Menu item add / remove / reorder ---------- */
+
+.fm-relative {
+  position: relative;
+}
+
+.fm-item-controls {
+  position: absolute;
+  top: -12px;
+  right: -8px;
+  z-index: 6;
+  display: flex;
+  gap: 2px;
+  padding: 3px;
+  background: var(--ink);
+  border-radius: 999px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.fm-item-controls button {
+  display: inline-flex;
+  padding: 4px;
+  border: none;
+  background: transparent;
+  color: #fff;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.fm-item-controls button:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.fm-item-controls button:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+.fm-ctrl-danger {
+  color: #fca5a5;
+}
+
+.fm-ctrl-icon {
+  width: 15px;
+  height: 15px;
+}
+
+.fm-add-row {
+  margin-top: 10px;
+}
+
+.fm-add-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 9px 16px;
+  border: 1.5px dashed var(--hairline);
+  background: transparent;
+  color: var(--clay-text);
+  border-radius: 999px;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s;
+}
+
+.fm-add-btn:hover {
+  border-color: var(--clay);
+  color: var(--clay);
+}
+
+.fm-note {
+  margin-top: 10px;
+  font-size: 12px;
+  font-style: italic;
+  color: var(--muted);
+}
+
+/* ---------- Rich-text bubble toolbar ---------- */
+
+.fm-rt-toolbar {
+  position: absolute;
+  z-index: 1100;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  padding: 4px 6px;
+  background: var(--ink);
+  border: 1px solid #3a352f;
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.28);
+}
+
+.fm-rt-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  border: none;
+  background: transparent;
+  color: rgba(252, 249, 238, 0.9);
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.fm-rt-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.fm-rt-icon {
+  width: 15px;
+  height: 15px;
+}
+
+.fm-rt-divider {
+  width: 1px;
+  height: 18px;
+  margin: 0 4px;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.fm-rt-swatch {
+  width: 18px;
+  height: 18px;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: transform 0.1s;
+}
+
+.fm-rt-swatch:hover {
+  transform: scale(1.15);
+}
