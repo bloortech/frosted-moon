@@ -66,6 +66,16 @@ export function RichTextToolbar() {
   if (!pos) return null;
 
   const exec = (command: string, value?: string) => {
+    // If nothing is selected (just a caret), format the whole field — otherwise
+    // clicking a colour/bold with no selection appears to "do nothing".
+    const el = activeRichElement();
+    const sel = window.getSelection();
+    if (el && sel && sel.isCollapsed) {
+      const range = document.createRange();
+      range.selectNodeContents(el);
+      sel.removeAllRanges();
+      sel.addRange(range);
+    }
     document.execCommand("styleWithCSS", false, "true");
     document.execCommand(command, false, value);
   };

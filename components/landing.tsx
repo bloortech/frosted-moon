@@ -18,9 +18,9 @@ import {
 } from "@/components/editor/list-controls";
 
 type Basket = Record<string, number>;
-type OrderForm = { name: string; date: string; phone: string; notes: string };
+type OrderForm = { name: string; date: string; phone: string; address: string; notes: string };
 
-const EMPTY_FORM: OrderForm = { name: "", date: "", phone: "", notes: "" };
+const EMPTY_FORM: OrderForm = { name: "", date: "", phone: "", address: "", notes: "" };
 
 const NAV_HREFS = ["#menu", "#workshop", "#story"];
 const VALUE_ICONS = [
@@ -146,6 +146,7 @@ export function Landing({ content }: { content: SiteContent }) {
       `Name: ${form.name}`,
       `Needed for: ${form.date}`,
       `Phone: ${form.phone}`,
+      `Deliver to: ${form.address}`,
       `Notes: ${form.notes}`,
     ].join("\n");
     return waLink(message);
@@ -410,6 +411,13 @@ export function Landing({ content }: { content: SiteContent }) {
             placeholder="Your phone number"
             value={form.phone}
             onChange={setFormField("phone")}
+          />
+          <input
+            className="input"
+            type="text"
+            placeholder="Where should we deliver this to?"
+            value={form.address}
+            onChange={setFormField("address")}
           />
           <textarea
             className="input"
