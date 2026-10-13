@@ -148,7 +148,7 @@ img {
 
 .placeholder span {
   font-family: var(--mono);
-  font-size: 9px;
+  font-size: 12px;
   letter-spacing: 0.16em;
   text-transform: lowercase;
   color: var(--softer);
@@ -351,11 +351,12 @@ img {
   color: var(--butter-text);
 }
 
-.value h3 {
+.value h2 {
   font-family: var(--serif);
   font-weight: 500;
   font-size: 18px;
   color: var(--ink);
+  margin: 1em 0;
 }
 
 .value p {
@@ -686,7 +687,6 @@ img {
   font-size: 15px;
   color: var(--ink);
   padding: 10px 2px;
-  outline: none;
   resize: vertical;
 }
 
@@ -696,6 +696,8 @@ img {
 
 .input:focus {
   border-bottom-color: var(--clay);
+  outline: 2px solid var(--clay);
+  outline-offset: 2px;
 }
 
 /* ---------- 6. Workshop ---------- */

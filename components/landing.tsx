@@ -247,7 +247,7 @@ export function Landing({ content }: { content: SiteContent }) {
               {VALUE_ICONS[i]?.icon ?? "☾"}
             </span>
             <div>
-              <EditableText as="h3" path={`values.${i}.title`} value={value.title} placeholder="Title" />
+              <EditableText as="h2" path={`values.${i}.title`} value={value.title} placeholder="Title" />
               <EditableText as="p" path={`values.${i}.body`} value={value.body} placeholder="Detail" />
             </div>
           </div>
