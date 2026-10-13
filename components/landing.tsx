@@ -556,25 +556,7 @@ export function Landing({ content }: { content: SiteContent }) {
             </a>
             <a href="#workshop">Workshops</a>
           </div>
-          <div className="footer-col">
-            <EditableText
-              as="h4"
-              path="footer.moonNotesHeading"
-              value={footer.moonNotesHeading}
-              placeholder="Heading"
-            />
-            <form className="footer-signup" onSubmit={(e) => e.preventDefault()}>
-              <input
-                className="input footer-input"
-                type="email"
-                placeholder="Your email"
-                aria-label="Email for moon notes"
-              />
-              <button className="btn-primary btn-join" type="submit">
-                Join
-              </button>
-            </form>
-          </div>
+          {/* Newsletter signup removed: it discarded emails (no backend, per PRODUCT.md). */}
         </div>
         <EditableText
           as="p"

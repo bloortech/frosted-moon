@@ -832,23 +832,6 @@ img {
   color: var(--clay);
 }
 
-.footer-signup {
-  display: flex;
-  align-items: flex-end;
-  gap: 10px;
-}
-
-.footer-input {
-  flex: 1;
-  min-width: 0;
-  font-size: 13px;
-  padding: 8px 2px;
-}
-
-.btn-join {
-  padding: 9px 18px;
-}
-
 .footer-bottom {
   font-size: 12px;
   color: var(--softer);
