@@ -612,6 +612,19 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+}
+
+/* Visible circle stays 26px; the hit area grows to 44x44. */
+.step::before,
+.basket-remove::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 44px;
+  height: 44px;
+  transform: translate(-50%, -50%);
 }
 
 .step:hover {
@@ -636,6 +649,7 @@ img {
   color: var(--softer);
   font-size: 16px;
   padding: 2px 4px;
+  position: relative;
 }
 
 .basket-remove:hover {
@@ -844,8 +858,34 @@ img {
     padding: 16px 24px;
   }
 
+  /* Mobile nav: persistent pill row under the brand / basket line. */
+  .nav {
+    flex-wrap: wrap;
+    row-gap: 8px;
+  }
+
+  .nav-left {
+    display: contents;
+  }
+
+  .nav-right {
+    order: 1;
+  }
+
   .nav-links {
-    display: none;
+    order: 2;
+    flex: 0 0 100%;
+    gap: 8px;
+  }
+
+  .nav-links a {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    border: 1px solid var(--hairline);
+    border-radius: 999px;
   }
 
   .nav-city {
