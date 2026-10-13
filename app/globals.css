@@ -151,7 +151,7 @@ img {
   font-size: 12px;
   letter-spacing: 0.16em;
   text-transform: lowercase;
-  color: var(--softer);
+  color: var(--soft);
 }
 
 /* ---------- 1. Nav ---------- */
@@ -647,7 +647,7 @@ img {
 .basket-remove {
   background: none;
   border: none;
-  color: var(--softer);
+  color: var(--soft);
   font-size: 16px;
   padding: 2px 4px;
   position: relative;
@@ -807,7 +807,7 @@ img {
 
 .footer-grid {
   display: grid;
-  grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  grid-template-columns: 1.4fr 1fr 1fr;
   gap: 32px;
   margin-bottom: 40px;
 }
@@ -850,7 +850,7 @@ img {
 
 .footer-bottom {
   font-size: 12px;
-  color: var(--softer);
+  color: var(--soft);
 }
 
 /* ---------- Responsive ---------- */
