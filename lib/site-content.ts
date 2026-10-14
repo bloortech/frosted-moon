@@ -179,7 +179,7 @@ export const DEFAULT_CONTENT: SiteContent = {
   },
   hero: {
     eyebrow: "FRESH, EGGLESS, HOMEMADE",
-    headline: "Sweet little things, baked",
+    headline: "Sweet little things, baked ",
     headlineEm: "under the moon.",
     body: "Hi, so glad you are here. Nikita bakes cakes, cookies, and dreamy dessert jars from her own kitchen in Kota. Every treat is eggless and made just for you. Pick what makes you smile and she will start baking.",
     ctaPrimary: "See the treats →",

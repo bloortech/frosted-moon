@@ -5,18 +5,18 @@
   --linen-warm: #ecd9c4;
   --ink: #1c1a17;
   --muted: #6a6965;
-  --soft: #a89a86;
+  --soft: #746653;
   --softer: #c3a988;
-  --clay: #c46a45;
-  --clay-dark: #b05e3c;
-  --clay-text: #b07a56;
+  --clay: #9f5233;
+  --clay-dark: #85442a;
+  --clay-text: #8a5e41;
   --hairline: #d9b99e;
   --mint: #d6f0e0;
-  --mint-text: #5b8b6f;
+  --mint-text: #4b725b;
   --blush: #f6dcd4;
-  --blush-text: #b5726a;
+  --blush-text: #94524a;
   --butter: #f3e6c4;
-  --butter-text: #a58a4a;
+  --butter-text: #796536;
   --backdrop: #e7e3d6;
   --hero-img-bg: #d8d4c8;
   --serif: var(--font-newsreader), Georgia, serif;
@@ -148,10 +148,10 @@ img {
 
 .placeholder span {
   font-family: var(--mono);
-  font-size: 9px;
+  font-size: 12px;
   letter-spacing: 0.16em;
   text-transform: lowercase;
-  color: var(--softer);
+  color: var(--soft);
 }
 
 /* ---------- 1. Nav ---------- */
@@ -351,11 +351,12 @@ img {
   color: var(--butter-text);
 }
 
-.value h3 {
+.value h2 {
   font-family: var(--serif);
   font-weight: 500;
   font-size: 18px;
   color: var(--ink);
+  margin: 1em 0;
 }
 
 .value p {
@@ -612,6 +613,19 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+}
+
+/* Visible circle stays 26px; the hit area grows to 44x44. */
+.step::before,
+.basket-remove::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 44px;
+  height: 44px;
+  transform: translate(-50%, -50%);
 }
 
 .step:hover {
@@ -633,9 +647,10 @@ img {
 .basket-remove {
   background: none;
   border: none;
-  color: var(--softer);
+  color: var(--soft);
   font-size: 16px;
   padding: 2px 4px;
+  position: relative;
 }
 
 .basket-remove:hover {
@@ -672,7 +687,6 @@ img {
   font-size: 15px;
   color: var(--ink);
   padding: 10px 2px;
-  outline: none;
   resize: vertical;
 }
 
@@ -682,6 +696,8 @@ img {
 
 .input:focus {
   border-bottom-color: var(--clay);
+  outline: 2px solid var(--clay);
+  outline-offset: 2px;
 }
 
 /* ---------- 6. Workshop ---------- */
@@ -791,7 +807,7 @@ img {
 
 .footer-grid {
   display: grid;
-  grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  grid-template-columns: 1.4fr 1fr 1fr;
   gap: 32px;
   margin-bottom: 40px;
 }
@@ -832,26 +848,9 @@ img {
   color: var(--clay);
 }
 
-.footer-signup {
-  display: flex;
-  align-items: flex-end;
-  gap: 10px;
-}
-
-.footer-input {
-  flex: 1;
-  min-width: 0;
-  font-size: 13px;
-  padding: 8px 2px;
-}
-
-.btn-join {
-  padding: 9px 18px;
-}
-
 .footer-bottom {
   font-size: 12px;
-  color: var(--softer);
+  color: var(--soft);
 }
 
 /* ---------- Responsive ---------- */
@@ -861,8 +860,34 @@ img {
     padding: 16px 24px;
   }
 
+  /* Mobile nav: persistent pill row under the brand / basket line. */
+  .nav {
+    flex-wrap: wrap;
+    row-gap: 8px;
+  }
+
+  .nav-left {
+    display: contents;
+  }
+
+  .nav-right {
+    order: 1;
+  }
+
   .nav-links {
-    display: none;
+    order: 2;
+    flex: 0 0 100%;
+    gap: 8px;
+  }
+
+  .nav-links a {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    border: 1px solid var(--hairline);
+    border-radius: 999px;
   }
 
   .nav-city {
